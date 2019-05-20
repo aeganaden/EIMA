@@ -1,10 +1,22 @@
 // Variables
-@import "./Ant.vars.scss";
+@import './Ant.vars.scss';
 
 // Example import .css
 //@import '~name_in_node_modules/dist/style.css';
 
 // Global styles
 body {
-  background-color: #f0f2f5;
+  background-color: #ffffff;
+}
+
+.welcome-text {
+  width: 337px;
+  height: 234px;
+  font-family: Roboto;
+  font-weight: 300;
+  font-size: 60px;
+  text-align: left;
+  color: #0b032d;
+  line-height: 1.2;
+  // margin-bottom: 17px;
 }

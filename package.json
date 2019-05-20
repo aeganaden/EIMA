@@ -9,9 +9,9 @@
     "url": "git+https://github.com/kevoj/electron-react-ant-boilerplate.git"
   },
   "author": {
-    "name": "leonardo R",
-    "email": "leonardo.ricog@gmail.com",
-    "url": "https://github.com/kevoj"
+    "name": "Angelo Ganaden Jr",
+    "email": "angelojrganaden@gmail.com",
+    "url": "https://github.com/passwordjr"
   },
   "keywords": [
     "react",
@@ -128,8 +128,8 @@
     "webpack-merge": "^4.2.1"
   },
   "build": {
-    "productName": "MyApp",
-    "appId": "org.develar.MyApp",
+    "productName": "Eima",
+    "appId": "org.develar.Eima",
     "files": [
       "dist",
       "main.js",

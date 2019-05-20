@@ -1,13 +1,16 @@
 // Libs
-import React from "react";
-import { HashRouter, Switch, Route } from "react-router-dom";
+import React from 'react';
+import { HashRouter, Switch, Route } from 'react-router-dom';
+
 // Screens
-import Home from "@/screens/Home/Home";
+import Home from '@/screens/Home';
+import Welcome from '@/screens/Welcome';
 
 const Routes = () => (
   <HashRouter>
     <Switch>
-      <Route exact path="/" component={Home} />
+      <Route exact path="/" component={Welcome} />
+      <Route exact path="/home" component={Home} />
     </Switch>
   </HashRouter>
 );
