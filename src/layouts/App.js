@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Layout, Menu, Icon } from 'antd';
 // Styles
-import styles from './App.scss';
+import { logo, titleWrapper } from './App.scss';
 // Constants
 const { Header, Footer, Sider, Content } = Layout;
 const SubMenu = Menu.SubMenu;
@@ -12,7 +12,7 @@ const MenuItemGroup = Menu.ItemGroup;
  * App
  *
  * @class App
- * @extends {Component}
+ * @extends {Component}2s
  */
 class App extends Component {
   static propTypes = {
@@ -24,7 +24,7 @@ class App extends Component {
   }
 
   render() {
-    const { children, logo } = this.props;
+    const { children, logo_svg } = this.props;
     return (
       <Layout>
         <Sider
@@ -36,72 +36,98 @@ class App extends Component {
             background: '#ffffff',
           }}
         >
-          <div className={styles.logo}>
-            <img src={logo} alt="" />
+          <div className={logo}>
+            <img src={logo_svg} alt="" />
           </div>
-          <Menu theme="light" mode="inline" defaultSelectedKeys={['4']}>
+          <Menu theme="light" mode="inline" defaultSelectedKeys={['0']}>
+            <div className={titleWrapper}>
+              <h2>LESSONS</h2>
+            </div>
+            <Menu.Item key="0">Dashboard</Menu.Item>
+
             <SubMenu
-              key="sub1"
+              key="lesson1"
               title={
                 <span>
-                  <Icon type="mail" />
-                  <span>Navigation One</span>
+                  <Icon type="layout" />
+                  <span>Lesson 1</span>
                 </span>
               }
             >
-              <MenuItemGroup key="g1" title="Item 1">
-                <Menu.Item key="1">Option 1</Menu.Item>
-                <Menu.Item key="2">Option 2</Menu.Item>
-              </MenuItemGroup>
-              <MenuItemGroup key="g2" title="Item 2">
-                <Menu.Item key="3">Option 3</Menu.Item>
-                <Menu.Item key="4">Option 4</Menu.Item>
+              <MenuItemGroup key="l1" title="Learning Outcomes">
+                <Menu.Item key="1"> Outcome 1</Menu.Item>
+                <Menu.Item key="2"> Outcome 2</Menu.Item>
+                <Menu.Item key="3"> Outcome 3</Menu.Item>
+                <Menu.Item key="4"> Outcome 4</Menu.Item>
               </MenuItemGroup>
             </SubMenu>
+
             <SubMenu
-              key="sub2"
+              key="lesson2"
               title={
                 <span>
-                  <Icon type="appstore" />
-                  <span>Navigation Two</span>
+                  <Icon type="layout" />
+                  <span>Lesson 2</span>
                 </span>
               }
             >
-              <Menu.Item key="5">Option 5</Menu.Item>
-              <Menu.Item key="6">Option 6</Menu.Item>
-              <SubMenu key="sub3" title="Submenu">
-                <Menu.Item key="7">Option 7</Menu.Item>
-                <Menu.Item key="8">Option 8</Menu.Item>
-              </SubMenu>
+              <MenuItemGroup key="l2" title="Learning Outcomes">
+                <Menu.Item key="5"> Outcome 1</Menu.Item>
+                <Menu.Item key="6"> Outcome 2</Menu.Item>
+                <Menu.Item key="7"> Outcome 3</Menu.Item>
+                <Menu.Item key="8"> Outcome 4</Menu.Item>
+              </MenuItemGroup>
             </SubMenu>
+
             <SubMenu
-              key="sub4"
+              key="lesson3"
               title={
                 <span>
-                  <Icon type="setting" />
-                  <span>Navigation Three</span>
+                  <Icon type="layout" />
+                  <span>Lesson 3</span>
                 </span>
               }
             >
-              <Menu.Item key="9">Option 9</Menu.Item>
-              <Menu.Item key="10">Option 10</Menu.Item>
-              <Menu.Item key="11">Option 11</Menu.Item>
-              <Menu.Item key="12">Option 12</Menu.Item>
+              <MenuItemGroup key="l3" title="Learning Outcomes">
+                <Menu.Item key="9"> Outcome 1</Menu.Item>
+                <Menu.Item key="10"> Outcome 2</Menu.Item>
+                <Menu.Item key="11"> Outcome 3</Menu.Item>
+                <Menu.Item key="12"> Outcome 4</Menu.Item>
+              </MenuItemGroup>
+            </SubMenu>
+
+            <SubMenu
+              key="lesson4"
+              title={
+                <span>
+                  <Icon type="layout" />
+                  <span>Lesson 4</span>
+                </span>
+              }
+            >
+              <MenuItemGroup key="l4" title="Learning Outcomes">
+                <Menu.Item key="13"> Outcome 1</Menu.Item>
+                <Menu.Item key="14"> Outcome 2</Menu.Item>
+                <Menu.Item key="15"> Outcome 3</Menu.Item>
+                <Menu.Item key="16"> Outcome 4</Menu.Item>
+              </MenuItemGroup>
             </SubMenu>
           </Menu>
         </Sider>
         <Layout style={{ marginLeft: 200 }}>
-          <Header style={{ background: '#fff', padding: 0 }} />
-          <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
-            <div
-              style={{ padding: 24, background: '#fff', textAlign: 'center' }}
-            >
-              {children}
-            </div>
+          {/* <Header style={{ background: '#fff', padding: 0 }} /> */}
+          <Content
+            style={{
+              overflow: 'initial',
+              height: '100vh',
+              background: '#6100ed00',
+            }}
+          >
+            <div style={{ padding: 24 }}>{children}</div>
           </Content>
-          <Footer style={{ textAlign: 'center' }}>
+          {/* <Footer style={{ textAlign: 'center' }}>
             Ant Design ©2018 Created by Ant UED
-          </Footer>
+          </Footer> */}
         </Layout>
       </Layout>
     );
