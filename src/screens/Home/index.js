@@ -9,7 +9,7 @@ import Layout from '@/layouts/App';
 // Image assets
 import svg_learning from '../../assets/images/vectors/learning.svg';
 // data
-import lessons from './lessons';
+import lessons from '../lessons';
 /**
  * Home
  *
@@ -30,8 +30,10 @@ class Home extends Component {
     this.setState({ visible: false });
   };
 
+  selectLesson = (id) => lessons.find((lesson) => lesson.id === id);
   onClickModal = (id) => {
-    const selectedLesson = lessons.find((lesson) => lesson.id === id);
+    const selectedLesson = this.selectLesson(id);
+    console.log(selectedLesson);
     this.setState({
       selectedLesson,
       visible: true,
@@ -60,7 +62,17 @@ class Home extends Component {
                 key={lesson.id}
                 cover={<img alt="example" src={lesson.img} />}
                 actions={[
-                  <Icon key="1" type="arrow-right" />,
+                  <Link
+                    to={{
+                      pathname: '/lesson',
+                      state: {
+                        selectedLesson: lesson,
+                      },
+                    }}
+                    key="1"
+                  >
+                    <Icon type="arrow-right" />
+                  </Link>,
                   <Icon
                     key="2"
                     type="eye"
@@ -86,6 +98,7 @@ class Home extends Component {
               Close
             </Button>,
           ]}
+          onCancel={this.closeModal}
         >
           {selectedLesson.outcomes.map((outcome, index) => (
             <div key={index}>

@@ -1,0 +1,16 @@
+.padding {
+  padding: 40px;
+}
+
+.image {
+  height: 120px;
+  width: 120px;
+  background: yellow;
+  border-radius: 4px;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
